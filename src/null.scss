@@ -231,10 +231,20 @@ html {
         }
 
         &_large {
+            &_wrapper {
+                cursor: pointer;
+                min-height: 100vh;
+
+                @media(max-width: 700px) {
+                    min-height: 50vh;
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+
             img {
                 max-height: 100vh;
                 cursor: pointer;
-                pointer-events: all;
             }
         }
 

@@ -5,11 +5,13 @@ export default () => {
     return (
         <>
             <div className='App_decor_large free_img'>
-                <img src="/decor.webp" alt="" onPointerEnter={() => {
+                <div className='App_decor_large_wrapper' onPointerEnter={() => {
                     setshowSmall(1)
                 }} onPointerLeave={() => {
                     setshowSmall(0)
-                }} />
+                }} >
+                    <img src="/decor.webp" alt="" />
+                </div>
             </div>
             <div className='App_decor_small free_img' style={{
                 opacity: showSmall
