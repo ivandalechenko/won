@@ -1,0 +1,63 @@
+/* MovingRows.css */
+.rows {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 6vh;
+    /* стартовый отступ сверху */
+}
+
+.rowWrap {
+    transform: rotate(var(--angle, -10deg));
+    margin-top: var(--overlap, -40px);
+    /* заходят друг на друга */
+    will-change: transform;
+}
+
+.track {
+    display: flex;
+    width: max-content;
+    animation: marquee var(--speed, 22s) linear infinite;
+    animation-direction: var(--dir, normal);
+}
+
+.items {
+    display: flex;
+    gap: 56px;
+}
+
+.track img {
+    height: 220px;
+    /* одинаковая высота, ширина авто → учитывает реальный размер */
+    width: auto;
+    object-fit: contain;
+    user-select: none;
+    pointer-events: none;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .35));
+}
+
+/* бесшовная прокрутка: сдвиг на ширину первой половины трека */
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-1 * var(--loop, 1000px)));
+    }
+}
+
+/* плотнее на малых экранах */
+@media (max-width: 768px) {
+    .track img {
+        height: 160px;
+    }
+
+    .items {
+        gap: 40px;
+    }
+}

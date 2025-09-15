@@ -1,0 +1,290 @@
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Montserrat';
+}
+
+.dnone {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+input,
+textarea {
+    box-sizing: border-box;
+}
+
+.free_img {
+    width: 0px;
+    height: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+html {
+    scroll-behavior: smooth;
+    background: black;
+
+}
+
+.App {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    &_rows {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        z-index: -1;
+    }
+
+    &_ca {
+        cursor: pointer;
+        width: 100%;
+        max-width: 800px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        font-weight: 900;
+        // margin: 0 auto;
+        background: url('/gold.webp');
+        background-size: 100% 200%;
+        background-position: center;
+        box-shadow: 8px 8px 20px #0008;
+        border-radius: 0px 16px 16px 0px;
+        min-height: 200px;
+        font-size: 32px;
+        margin-top: 32px;
+        pointer-events: all;
+
+        @media(max-width: 750px) {
+            border-radius: 0px;
+            word-break: break-all;
+            padding: 12px;
+            min-height: 150px;
+            text-align: center;
+            margin-top: 120px;
+            font-size: 28px;
+        }
+    }
+
+    &_slogan {
+        color: white;
+        margin-top: 32px;
+        font-weight: 900;
+        font-size: 32px;
+        max-width: 500px;
+        padding-left: 12px;
+
+        @media(max-width: 600px) {
+            text-align: center;
+            text-shadow: 0px 0px 10px #0008;
+        }
+
+        &_wrapper {
+            width: 100%;
+        }
+    }
+
+    &_content {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &_text {
+        height: calc(100vh - 70px);
+        display: flex;
+        align-items: center;
+        align-content: center;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    &_decor {
+        min-height: calc(100vh - 70px);
+        align-items: end;
+        top: 20px;
+        left: -260px;
+        position: relative;
+        z-index: 1;
+
+        @media(max-width: 600px) {
+
+            left: -50vw;
+        }
+
+        &_small,
+        &_large {
+            align-items: end;
+
+        }
+
+        &_large {
+            img {
+                max-height: 100vh;
+                cursor: pointer;
+            }
+        }
+
+        &_small {
+            top: -30vh;
+            pointer-events: none;
+
+            img {
+                box-shadow: 4px 4px 20px #0008;
+                max-height: 20vh;
+                animation: shake 0.2s infinite steps(1);
+            }
+
+            @keyframes shake {
+                0% {
+                    transform: rotate(-20deg);
+                }
+
+                50% {
+                    transform: rotate(20deg);
+                }
+
+                100% {
+                    transform: rotate(-20deg);
+                }
+            }
+        }
+
+    }
+}
+
+
+
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/fonts/Montserrat-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/fonts/Montserrat-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+    /* убирает синюю подсветку на iOS/Android */
+    -webkit-touch-callout: none;
+    /* отключает меню при долгом тапе (по желанию) */
+}

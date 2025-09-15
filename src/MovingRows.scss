@@ -1,0 +1,56 @@
+.MovingRows {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+    flex-wrap: wrap;
+
+    &_row {
+        min-width: 250vw;
+        display: flex;
+        align-items: center;
+        gap: 200px;
+
+        &_left {
+            position: relative;
+            left: 80vw;
+            animation: ltrAnim 120s infinite linear alternate;
+
+            @keyframes ltrAnim {
+                0% {
+                    transform: translate(0px, 0px);
+                }
+
+                100% {
+                    transform: translate(-80vw, 0px);
+                }
+            }
+        }
+
+        &_right {
+            position: relative;
+            left: 0vw;
+            animation: rtlAnim 120s infinite linear alternate;
+
+            @keyframes rtlAnim {
+                0% {
+                    transform: translate(0px, 0px);
+                }
+
+                100% {
+                    transform: translate(80vw, 0px);
+                }
+            }
+        }
+
+
+    }
+
+    &_img {
+        img {
+            filter: brightness(0.4);
+        }
+    }
+}

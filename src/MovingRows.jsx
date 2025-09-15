@@ -1,0 +1,29 @@
+import "./MovingRows.scss";
+
+const images = ["/won/1.webp", "/won/2.webp", "/won/3.webp", "/won/4.webp", "/won/5.webp", "/won/6.webp", "/won/7.webp", "/won/8.webp", "/won/9.webp", "/won/10.webp", "/won/11.webp", "/won/12.webp", "/won/13.webp", "/won/14.webp", "/won/15.webp"];
+
+
+export default () => {
+    return (
+        <div className='MovingRows'>
+            {Array(Math.ceil((window.innerHeight / 200) + 4))
+                .fill(0)
+                .map((_, index) => {
+                    return <div className={`MovingRows_row MovingRows_row_${index % 2 === 0 ? 'left' : 'right'
+                        } `} key={`MovingRows` + '_' + index}>
+
+                        {Array(20)
+                            .fill(0)
+                            .map((_, jndex) => {
+                                return <div className='MovingRows_img free_img' key={`MovingRows_img` + '_' + index + '-' + jndex}>
+                                    <img src={images[Math.ceil(images.length * Math.random())]} alt="" style={{
+                                        width: `${Math.random() * 100 + 200}px`,
+                                        rotate: `${Math.random() * 50 - 25}deg`,
+                                    }} />
+                                </div>
+                            })}
+                    </div>
+                })}
+        </div>
+    )
+}
