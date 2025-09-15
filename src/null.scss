@@ -234,6 +234,7 @@ html {
             img {
                 max-height: 100vh;
                 cursor: pointer;
+                pointer-events: all;
             }
         }
 
