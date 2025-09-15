@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import './styles/CABlock.scss';
+import MediaElements from './MediaElements';
 
 
 const CA = 'TKaPzvnXD9Tb2E5XHb54vwDCyHz2LbKAnc'
@@ -20,8 +21,13 @@ export default () => {
     }
 
     return (
-        <div className='App_ca' onClick={copyCa} >
-            {caText}
-        </div>
+        <>
+            <div className='App_ca' onClick={copyCa} >
+                {caText}
+            </div>
+            <div className='CABlock_media'>
+                <MediaElements />
+            </div>
+        </>
     )
 }
