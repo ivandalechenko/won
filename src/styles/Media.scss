@@ -26,6 +26,7 @@
         width: 64px;
         cursor: pointer;
         transition: scale 200ms;
+        pointer-events: all !important;
 
         @media(max-width: 500px) {
             width: 48px;

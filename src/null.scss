@@ -288,3 +288,14 @@ html {
     -webkit-touch-callout: none;
     /* отключает меню при долгом тапе (по желанию) */
 }
+
+img {
+    user-select: none;
+    /* нельзя выделять */
+    -webkit-user-drag: none;
+    /* нельзя перетаскивать */
+    pointer-events: none;
+    /* отключает все клики (если надо) */
+    -webkit-touch-callout: none;
+    /* убирает меню при долгом тапе на iOS */
+}
